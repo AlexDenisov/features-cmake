@@ -22,6 +22,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - uses: devcontainers-community/publish-feature@v1
         with:
+          image: ghcr.io/alexdenisov/features/feature-cmake
           files: |
             common/install.sh
             common/utilities.sh
