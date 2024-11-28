@@ -1,5 +1,6 @@
 name: Publish feature
 on:
+  pull_request:
   release:
     types: published
   workflow_dispatch:
@@ -20,3 +21,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - uses: devcontainers-community/publish-feature@v1
+        with:
+          image: ghcr.io/alexdenisov/features/feature-cmake
+          files: |
+            common/install.sh
+            common/utilities.sh
+            common/etc/bash.bash_env
+            install.sh
+            README.md
+            devcontainer-feature.json
+            LICENSE
+            test.sh
